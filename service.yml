@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-coc-demo
+  labels:
+    app: devops-coc-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-coc-demo
+  template:
+    metadata:
+      labels:
+        app: devops-coc-demo
+    spec:
+      containers:
+      - name: devops-coc-demo
+        image: registry.eu-gb.bluemix.net/devopscoc-demo/docker-pipeline:latest
+        ports:
+        - containerPort: 9191
+        env:
+        - name: Build-Number
+          value: "_BUILD-NUMBER_"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops-coc-demo-service
+  labels:
+    app: devops-coc-demo
+spec:
+  selector:
+    app: devops-coc-demo
+  type: NodePort
+  ports:
+   - port: 9191
+     # nodePort: <31514>
