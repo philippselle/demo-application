@@ -16,7 +16,7 @@ pipeline {
                     def dockerNetwork="devopscoc-demotoolchain_default"
 
                   stage('Checkout') { 
-                    git branch: 'master', url: 'https://github.com/philippselle/demo-application'
+                    git branch: 'fail2', url: 'https://github.com/philippselle/demo-application'
                   }
 
                   stage('Java Build') { 
