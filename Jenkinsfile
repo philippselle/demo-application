@@ -25,7 +25,7 @@ pipeline {
                     rtMaven.deployer server: server, releaseRepo: 'maven', snapshotRepo: 'maven'
                     rtMaven.tool = "maven"
 
-                    buildInfo = rtdMaven.run pom: 'pom.xml', goals: 'clean package -Dmaven.test.skip=true'
+                    buildInfo = rtMaven.run pom: 'pom.xml', goals: 'clean package -Dmaven.test.skip=true'
                   }
 
                   stage('Publish to Artifactory') { 
