@@ -1,4 +1,4 @@
-package com.ibm.devopscoc.showcase;
+package com.ibm.devopscoc.showcasefail;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

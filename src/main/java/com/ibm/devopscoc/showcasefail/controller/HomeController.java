@@ -1,4 +1,4 @@
-package com.ibm.devopscoc.showcase.controller;
+package com.ibm.devopscoc.showcasefail.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

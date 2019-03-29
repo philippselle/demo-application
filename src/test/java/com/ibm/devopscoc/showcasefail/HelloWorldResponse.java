@@ -1,4 +1,4 @@
-package com.ibm.devopscoc.showcase;
+package com.ibm.devopscoc.showcasefail;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

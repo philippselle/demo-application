@@ -1,4 +1,4 @@
-package com.ibm.devopscoc.showcase;
+package com.ibm.devopscoc.showcasefail;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
