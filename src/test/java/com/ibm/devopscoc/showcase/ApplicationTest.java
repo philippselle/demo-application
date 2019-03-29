@@ -1,7 +1,7 @@
-package com.ibm.devopscoc.showcasefail;
+package com.ibm.devopscoc.showcase;
 
 import org.junit.Test;
-import com.ibm.devopscoc.showcasefail.Application;
+import com.ibm.devopscoc.showcase.Application;
 
 public class ApplicationTest {
 
