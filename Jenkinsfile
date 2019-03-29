@@ -15,9 +15,9 @@ pipeline {
                     def port=9191
                     def dockerNetwork="devopscoc-demotoolchain_default"
 
-                  stage('Checkout') { 
-                    git branch: 'master', url: 'https://github.com/philippselle/demo-application'
-                  }
+                  // stage('Checkout') { 
+                  //  git branch: 'master', url: 'https://github.com/philippselle/demo-application'
+                  // }
 
                   stage('Java Build') { 
                     // resolver is used for downloading dependencies
