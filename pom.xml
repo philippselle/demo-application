@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ibm.devopscoc</groupId>
-    <artifactId>showcase</artifactId>
+    <artifactId>showcasefail</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <parent>
