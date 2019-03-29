@@ -15,10 +15,6 @@ pipeline {
                     def port=9191
                     def dockerNetwork="devopscoc-demotoolchain_default"
 
-                  stage('Checkout') { 
-                    git branch: 'fail2', url: 'https://github.com/philippselle/demo-application'
-                  }
-
                   stage('Java Build') { 
                     // resolver is used for downloading dependencies
                     // rtMaven.resolver server: server, releaseRepo: 'maven', snapshotRepo: 'maven'
