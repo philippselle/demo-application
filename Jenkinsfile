@@ -30,9 +30,7 @@ pipeline {
 
                   stage('JUnit') { 
                     try {
-                      withSonarQubeEnv('sonar') {
                         buildInfo = rtMaven.run pom: 'pom.xml', goals: 'test'
-                      }
                     } finally {
                         junit allowEmptyResults: true, testResults: '**/target/surefire-reports/*.xml'
                     }                   
@@ -68,26 +66,6 @@ pipeline {
                     }
                     echo "Application was deployed on http://localhost:${port}"
                   }
-
-                  // stage('Health Check') { 
-                  //   def i = 0
-
-                  //   waitUntil {
-                  //     try {
-                  //       sh "curl http://deploy-test${version}:${port}/health"
-                  //       true
-                  //     } catch(error) {
-                  //       if (i > 2) {
-                  //         currentBuild.result = 'FAILURE'
-                  //         return true
-                  //       }
-                  //       sleep 10
-                  //       currentBuild.result = 'SUCCESS'
-                  //       false
-                  //       sh 'exit'
-                  //     }
-                  //   }
-                  // } 
                 }
             }
         }
