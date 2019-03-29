@@ -16,7 +16,7 @@ pipeline {
                     def dockerNetwork="devopscoc-demotoolchain_default"
 
                   stage('Checkout') { 
-                    git branch: 'refactoring', changelog: false, credentialsId: 'github', poll: false, url: 'https://github.ibm.com/DevOps-CoC-Showcase/docker-showcase'
+                    git branch: 'master', url: 'https://github.com/philippselle/demo-application'
                   }
 
                   stage('Java Build') { 
