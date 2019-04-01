@@ -43,6 +43,10 @@ pipeline {
                   }
 
                   stage('Sonarqube Quality Gate') { 
+		    options {
+           	      timeout(time: 5, unit: 'MINUTES')
+          	      retry(2)
+      		    }
                     sleep 10
                     def qg = waitForQualityGate()
                     if (qg.status != 'OK') {
