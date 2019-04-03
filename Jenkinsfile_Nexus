@@ -27,7 +27,7 @@ pipeline {
 
                   stage('JUnit') { 
                     try {
-                        sh 'test'
+                        sh 'mvn test'
                     } finally {
                         junit allowEmptyResults: true, testResults: '**/target/surefire-reports/*.xml'
                     }                   
@@ -35,7 +35,7 @@ pipeline {
 
                   stage('QA') { 
                     withSonarQubeEnv('sonar') {
-                      buildInfo = rtMaven.run pom: 'pom.xml', goals: 'sonar:sonar'
+                      sh 'mvn sonar:sonar'
                     }
                   }
 
