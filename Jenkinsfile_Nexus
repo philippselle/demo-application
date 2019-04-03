@@ -21,7 +21,16 @@ pipeline {
                     def port=9191
                     def dockerNetwork="devopscoc-demotoolchain_default"
 
+                  // used if pipeline-code is directly used in Jenkins
+                  // stage('Git Checkout') { 
+                  //   git branch: 'master', url: 'https://github.com/philippselle/demo-application/'
+                  // }
+
                   stage('Java Build') { 
+                    if (!fileExists(file: '/home/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven')) {
+                      sh 'wget https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.6.0/apache-maven-3.6.0-bin.zip -P /home/jenkins/tools/hudson.tasks.Maven_MavenInstallation/ && unzip /home/jenkins/tools/hudson.tasks.Maven_MavenInstallation/apache-maven-3.6.0-bin.zip -d /home/jenkins/tools/hudson.tasks.Maven_MavenInstallation'
+                      sh 'mv /home/jenkins/tools/hudson.tasks.Maven_MavenInstallation/apache-maven-3.6.0 /home/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven && rm /home/jenkins/tools/hudson.tasks.Maven_MavenInstallation/apache-maven-3.6.0-bin.zip'
+                    }
                     sh 'mvn clean package -Dmaven.test.skip=true'
                   }
 
