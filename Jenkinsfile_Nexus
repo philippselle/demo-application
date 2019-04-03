@@ -12,7 +12,7 @@ pipeline {
                 script {
                     def targetPath="target"
                     def artifactType="jar"
-                    def nexusUrl="nexus-test:8081"
+                    def nexusUrl="nexus:8081"
                     def nexusVersion="nexus3"
                     def nexusProtocol="http"
                     def nexusSnapshotRepo="maven-snapshots"
