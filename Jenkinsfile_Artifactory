@@ -43,7 +43,7 @@ pipeline {
                   }
 
                   stage('Sonarqube Quality Gate') { 
-                    sleep 10
+                    sleep 20
                     def qg = waitForQualityGate()
                     if (qg.status != 'OK') {
                       error "Pipeline aborted due to quality gate failure: ${qg.status}"
